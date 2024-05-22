@@ -150,7 +150,7 @@ class _EnterScreenState extends State<EnterScreen> {
               ),
               GestureDetector(
                 onTap: () {
-
+                  Navigator.of(context).pushNamed('/template');
                 },
                 child: Container(
                   height: 55,
