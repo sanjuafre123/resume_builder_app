@@ -136,6 +136,7 @@ class _EducationScreenState extends State<EducationScreen> {
                 ],
               ),
               TextFormField(
+                keyboardType: TextInputType.number,
                 controller: txtGraduation,
               ),
               const SizedBox(
@@ -143,7 +144,7 @@ class _EducationScreenState extends State<EducationScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pushNamed('/Work');
+                  Navigator.of(context).pushNamed('/Contact');
                 },
                 child: Container(
                   alignment: Alignment.center,
