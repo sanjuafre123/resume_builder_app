@@ -17,13 +17,6 @@
   
 </div>
 
-</div>
 
-<h3 align="center"> Login video </h3>
-
-<div align="center">
- <video src="https://github.com/sanjuafre123/resume_builder_app/assets/148860124/886866f8-ad04-4922-a95a-ef66ccdb5181" type="video/mp4">
-</video>
-</div>
 
 
