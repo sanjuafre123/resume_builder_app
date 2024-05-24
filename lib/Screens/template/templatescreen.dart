@@ -65,7 +65,7 @@ class _TemplateScreenState extends State<TemplateScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           image: DecorationImage(
-                            image: AssetImage('assets/img1.png'),
+                            image: AssetImage(imagesList[index]),
                             fit: BoxFit.cover,
                           ),
                         ),

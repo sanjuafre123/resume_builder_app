@@ -7,12 +7,12 @@ import '../Screens/CV_Option/cv_optionscreen.dart';
 import '../Screens/Contect/contectscreen.dart';
 import '../Screens/Education/EducationScreen.dart';
 import '../Screens/Login/LoginScreen.dart';
+import '../Screens/PDFScreen/PdfScreen.dart';
 import '../Screens/Skills/skills.dart';
 import '../Screens/SplashScreen/splashscreen.dart';
 import '../Screens/WorkHistory/workScreen.dart';
 import '../Screens/dashboard/dashboardscreen.dart';
 import '../Screens/template/templatescreen.dart';
-import '../Screens/udfscreen/UdfScreen.dart';
 
 
 class MyRoutes{
@@ -28,6 +28,6 @@ class MyRoutes{
     '/Work' : (context) => const WorkHistory(),
     '/Contact' : (context) => const ContactScreen(),
     '/skills' : (context) => const SkillScreen(),
-    '/udf' : (context) => const UdfScreen(),
+    '/pdf' : (context) => const Resume(),
   };
 }
