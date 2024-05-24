@@ -12,6 +12,7 @@ import '../Screens/SplashScreen/splashscreen.dart';
 import '../Screens/WorkHistory/workScreen.dart';
 import '../Screens/dashboard/dashboardscreen.dart';
 import '../Screens/template/templatescreen.dart';
+import '../Screens/udfscreen/UdfScreen.dart';
 
 
 class MyRoutes{
@@ -27,5 +28,6 @@ class MyRoutes{
     '/Work' : (context) => const WorkHistory(),
     '/Contact' : (context) => const ContactScreen(),
     '/skills' : (context) => const SkillScreen(),
+    '/udf' : (context) => const UdfScreen(),
   };
 }
