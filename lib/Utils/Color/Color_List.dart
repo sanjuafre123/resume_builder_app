@@ -27,14 +27,31 @@ TextEditingController txtDrivingLicence = TextEditingController();
 TextEditingController txtWebsite = TextEditingController();
 
 class EducationModel {
-
   // EducationModel({
   //
   // });
 }
 
 List<EducationModel> educationModel = [
-  EducationModel(
-
-  ),
+  EducationModel(),
 ];
+String? first;
+String? last;
+String? Email;
+String? city;
+String? country;
+String? Nationality;
+String? postcode;
+String? Driving;
+String? Website;
+String? job;
+String? Employee;
+String? dmy;
+String? sname;
+String? slocation;
+String? degree;
+String? study;
+String? skills;
+String? stDate;
+String? eDate;
+String? languageName;

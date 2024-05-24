@@ -8,6 +8,7 @@ class SkillScreen extends StatefulWidget {
 }
 
 class _SkillScreenState extends State<SkillScreen> {
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
