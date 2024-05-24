@@ -110,7 +110,7 @@ class _SkillScreenState extends State<SkillScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed('/pdf');
                   },
                   child: Container(
                     alignment: Alignment.center,

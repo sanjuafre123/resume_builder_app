@@ -27,13 +27,16 @@ TextEditingController txtDrivingLicence = TextEditingController();
 TextEditingController txtWebsite = TextEditingController();
 
 class EducationModel {
+
   // EducationModel({
   //
   // });
 }
 
 List<EducationModel> educationModel = [
-  EducationModel(),
+  EducationModel(
+
+  ),
 ];
 String? first;
 String? last;
