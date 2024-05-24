@@ -13,6 +13,7 @@ import '../Screens/WorkHistory/workScreen.dart';
 import '../Screens/dashboard/dashboardscreen.dart';
 import '../Screens/template/templatescreen.dart';
 
+
 class MyRoutes{
   static Map<String, Widget Function(BuildContext)> routes ={
     '/' : (context) => const SplashScreen(),
