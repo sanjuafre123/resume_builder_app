@@ -1,10 +1,12 @@
-
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pd;
 import 'package:printing/printing.dart';
 
+import '../../Utils/Color/Color_List.dart';
+import '../Contect/contectscreen.dart';
 
 class Resume extends StatefulWidget {
   const Resume({super.key});
@@ -28,6 +30,10 @@ class _ResumeState extends State<Resume> {
 
   generatePdf() async {
     final pdf = pd.Document();
+    final image = pd.MemoryImage(
+      File(fileImage!.path).readAsBytesSync(),
+    );
+
     pdf.addPage(
       pd.Page(
         pageFormat: PdfPageFormat.a4,
@@ -37,174 +43,75 @@ class _ResumeState extends State<Resume> {
               children: [
                 pd.Row(
                   crossAxisAlignment: pd.CrossAxisAlignment.start,
-                  //  mainAxisAlignment: pd.MainAxisAlignment.start,
                   children: [
-                    pd.Stack(children: [
+                    pd.Column(children: [
                       pd.Container(
-                        height: 720,
-                        width: 225,
-                        decoration: const pd.BoxDecoration(
+                        height: 140,
+                        width: 140,
+                        decoration: pd.BoxDecoration(
+                          border: pd.Border.all(width: 5,color: PdfColors.black,),borderRadius: pd.BorderRadius.circular(15),
                         ),
+                        child: pd.Image(image,
+                        fit: pd.BoxFit.cover),),
+                      pd.SizedBox(
+                        height: 30
                       ),
-                      pd.Positioned(
-                        top: 200,
-                        left: 30,
-                        child: pd.Text(
-                          'Contact',
-                          style: pd.TextStyle(
-                            fontSize: 18,
-                            fontWeight: pd.FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      pd.Positioned(
-                        top: 225,
-                        left: 30,
-                        child: pd.Container(
-                          width: 150,
-                          height: 4,
-                          child: pd.Divider(
-                            thickness: 2,
-                          ),
-                        ),
-                      ),
+                      pd.Row(
+                        children: [
+                          pd.Text('Contact',style: pd.TextStyle(color: PdfColors.black,fontSize: 30),),
 
-                      pd.Positioned(
-                        top: 400,
-                        left: 30,
-                        child: pd.Text(
-                          "SKILLS",
-                          style: pd.TextStyle(
-                            fontSize: 20,
-                            fontWeight: pd.FontWeight.bold,
-                          ),
+                        ]
+                      ),
+                      pd.Container(
+                        margin: pd.EdgeInsets.symmetric(horizontal: 30),
+                        width: 130,
+                        height: 4,
+                        child: pd.Divider(
+                          thickness: 2,
                         ),
                       ),
-                      pd.Positioned(
-                        top: 430,
-                        left: 30,
-                        child: pd.Container(
-                          width: 150,
-                          height: 4,
-                          child: pd.Divider(
-                            thickness: 2,
-                          ),
-                        ),
+                     pd.Column(
+                       crossAxisAlignment: pd.CrossAxisAlignment.start,
+                       children: [
+                         pd.Text('$first',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                         pd.Text('$last',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                         pd.Text('$Email',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                         pd.Text('$city',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                         pd.Text('$country',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                         pd.Text('$Nationality',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                         pd.Text('$postcode',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                         pd.Text('$Driving',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                         pd.Text('$Website',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                       ]
+                     ),
+                      pd.SizedBox(
+                          height: 30
                       ),
-                      pd.Positioned(
-                        top: 450,
-                        left: 30,
-                        child: pd.Row(
+                      pd.Row(
                           children: [
-                            pd.SizedBox(width: 10),
-                            pd.Text(
-                              "- Team Work",
-                              style: const pd.TextStyle(
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      pd.Positioned(
-                        top: 470,
-                        left: 30,
-                        child: pd.Row(
-                          children: [
-                            pd.SizedBox(width: 10),
-                            pd.Text(
-                              "- Time Management",
-                              style: const pd.TextStyle(
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                            pd.Text('Skill',style: pd.TextStyle(color: PdfColors.black,fontSize: 30),),
 
-                      pd.Positioned(
-                        top: 530,
-                        left: 30,
-                        child: pd.Row(
+                          ]
+                      ),
+                      pd.Container(
+                        margin: pd.EdgeInsets.symmetric(horizontal: 30),
+                        width: 130,
+                        height: 4,
+                        child: pd.Divider(
+                          thickness: 2,
+                        ),
+                      ),
+                      pd.SizedBox(
+                        height: 20
+                      ),
+                      pd.Column(
+                          crossAxisAlignment: pd.CrossAxisAlignment.start,
                           children: [
-                            pd.SizedBox(width: 10),
-                            pd.Text(
-                              "  Communication",
-                              style: pd.TextStyle(
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      pd.Positioned(
-                        top: 560,
-                        left: 30,
-                        child: pd.Text(
-                          "language",
-                          style: pd.TextStyle(
-                            fontSize: 20,
-                            fontWeight: pd.FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      pd.Positioned(
-                        top: 585,
-                        left: 30,
-                        child: pd.Container(
-                          width: 150,
-                          height: 4,
-                          child: pd.Divider(
-                            thickness: 2,
-                          ),
-                        ),
-                      ),
-                      pd.Positioned(
-                        top: 600,
-                        left: 30,
-                        child: pd.Row(
-                          children: [
-                            pd.SizedBox(width: 10),
-                            pd.Text(
-                              "- English",
-                              style: pd.TextStyle(
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      pd.Positioned(
-                        top: 630,
-                        left: 30,
-                        child: pd.Row(
-                          children: [
-                            pd.SizedBox(width: 10),
-                            pd.Text(
-                              "- French",
-                              style: pd.TextStyle(
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      pd.Positioned(
-                        top: 720,
-                        left: 30,
-                        child: pd.Row(
-                          children: [
-                            pd.SizedBox(width: 10),
-                            pd.Text(
-                              "  Hindi",
-                              style: pd.TextStyle(
-                                fontSize: 18,
-                                fontWeight: pd.FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                            pd.Text('C Language',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                            pd.Text('Cpp Language',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                            pd.Text('dart Language',style: pd.TextStyle(fontSize: 20,fontWeight: pd.FontWeight.bold)),
+                          ]
+                      )
                     ]),
                     pd.Column(
                       crossAxisAlignment: pd.CrossAxisAlignment.start,

@@ -106,7 +106,7 @@ class _ContactScreenState extends State<ContactScreen> {
                           child: IconButton(
                             onPressed: () async {
                               XFile? xFileImage = await imagePicker.pickImage(
-                                  source: ImageSource.gallery);
+                                  source: ImageSource.camera);
                               setState(() {
                                 fileImage = File(xFileImage!.path);
                               });

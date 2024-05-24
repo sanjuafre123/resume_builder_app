@@ -17,6 +17,14 @@ class _LoginScreenState extends State<LoginScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 10,top: 3),
+              child: IconButton(onPressed: () {
+                Navigator.of(context).pushNamed('/setting');
+              }, icon: Text('SETTING',style: TextStyle(color: color1,fontSize: 14,fontWeight: FontWeight.w500),)),
+            )
+          ],
           centerTitle: true,
           title: Text(
             'Registration',
